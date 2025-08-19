@@ -1,30 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Mi Página de Prueba</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Página personal de Dustin con enlace a su repositorio en GitHub." />
+  <title>Mi Página de Prueba — Dustin</title>
+
+  <!-- Fuente e iconos -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Página de Prueba </h1>
-    <p>Curso: Herramientas de Desarrollo</p>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo">Dustin<span>_DEV</span></h1>
+      <nav aria-label="principal">
+        <ul class="nav">
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#repositorio">Repositorio</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Sobre mí</h2>
-      <p>Hola, soy Dustin y esta es mi primera página enlazada con GitHub.</p>
+  <section class="hero">
+    <div class="container hero-inner">
+      <h2>Curso: Herramientas de Desarrollo</h2>
+      <p>Hola, soy Dustin. Esta es mi primera página enlazada con GitHub, ahora con estilo 🔥</p>
+      <a class="btn btn-primary" href="#repositorio">Ver mi repo</a>
+    </div>
+  </section>
+
+  <main class="container">
+    <section id="sobre-mi" class="card">
+      <div class="card-header">
+        <i class="fa-solid fa-user-astronaut"></i>
+        <h3>Sobre mí</h3>
+      </div>
+      <p>
+        Me gusta aprender y construir proyectos web. Esta página es mi base para compartir
+        avances, prácticas y retos del curso. 💻
+      </p>
+      <ul class="tags" aria-label="Tecnologías de interés">
+        <li>HTML</li><li>CSS</li><li>JavaScript</li>
+      </ul>
     </section>
 
-    <section>
-      <h2>Repositorio</h2>
-      <a href="https://github.com/Dustin200309/pro" target="_blank">Ver en GitHub</a>
+    <section id="repositorio" class="card">
+      <div class="card-header">
+        <i class="fa-brands fa-github"></i>
+        <h3>Repositorio</h3>
+      </div>
+      <p>Encuentra el código de este proyecto y futuras mejoras en mi GitHub.</p>
+      <a class="btn btn-ghost"
+         href="https://github.com/Dustin200309/pro"
+         target="_blank" rel="noopener noreferrer" aria-label="Abrir repositorio en una pestaña nueva">
+        <i class="fa-brands fa-github"></i> Ver en GitHub
+      </a>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Dustin</p>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Dustin.</p>
+    </div>
   </footer>
+
+  <!-- Botón volver arriba -->
+  <button class="to-top" aria-label="Volver arriba">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // Accesible: muestra/oculta botón y hace scroll suave
+    const toTop = document.querySelector('.to-top');
+    const onScroll = () => {
+      if (window.scrollY > 300) toTop.classList.add('show');
+      else toTop.classList.remove('show');
+    };
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    document.addEventListener('scroll', onScroll, { passive: true });
+  </script>
 </body>
 </html>
