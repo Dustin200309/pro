@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Mi Página de Prueba</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Página personal de Dustin con enlace a su repositorio en GitHub." />
+  <title>Mi Página de Prueba — Dustin</title>
+ 
 </head>
 <body>
   <header>
@@ -39,14 +41,38 @@
 
 
 
-    <section>
-      <h2>Repositorio</h2>
-      <a href="https://github.com/Dustin200309/pro" target="_blank">Ver en GitHub</a>
+    <section id="repositorio" class="card">
+      <div class="card-header">
+        <i class="fa-brands fa-github"></i>
+        <h3>Repositorio</h3>
+      </div>
+      <p>Encuentra el código de este proyecto y futuras mejoras en mi GitHub.</p>
+      <a class="btn btn-ghost"
+         href="https://github.com/Dustin200309/pro"
+         target="_blank" rel="noopener noreferrer" aria-label="Abrir repositorio en una pestaña nueva">
+        <i class="fa-brands fa-github"></i> Ver en GitHub
+      </a>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2025 Dustin y Ronny</p>
   </footer>
+
+  <!-- Botón volver arriba -->
+  <button class="to-top" aria-label="Volver arriba">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // Accesible: muestra/oculta botón y hace scroll suave
+    const toTop = document.querySelector('.to-top');
+    const onScroll = () => {
+      if (window.scrollY > 300) toTop.classList.add('show');
+      else toTop.classList.remove('show');
+    };
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    document.addEventListener('scroll', onScroll, { passive: true });
+  </script>
 </body>
 </html>
