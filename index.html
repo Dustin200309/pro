@@ -3,78 +3,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Página personal de Dustin con enlace a su repositorio en GitHub." />
-  <title>Mi Página de Prueba — Dustin</title>
- 
+  <meta name="description" content="Página tipo marketplace gamer con buscador, menú y héroes destacados." />
+  <title>DYR — Marketplace Gamer (Demo)</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="logo">D<span>YR</span></div>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__bar">
+      <div class="logo">D<span>YR</span></div>
 
-    <div class="search-bar">
-      <input type="text" placeholder="¿Qué estás buscando?">
-      <select>
-        <option>Todas las categorías</option>
-        <option>Software</option>
-        <option>Juegos</option>
-      </select>
-      <button>🔍</button>
+      <form class="search" role="search" aria-label="Buscar productos">
+        <input type="text" placeholder="¿Qué estás buscando?" aria-label="Buscar" />
+        <select aria-label="Elegir categoría">
+          <option>Todas las categorías</option>
+          <option>Software</option>
+          <option>Juegos</option>
+          <option>Tarjetas regalo</option>
+        </select>
+        <button type="submit" title="Buscar">🔍</button>
+      </form>
+
+      <nav class="user" aria-label="Menú de usuario">
+        <span class="chip hide-sm">🌎 Perú</span>
+        <a class="chip" href="#">👤 Acceder / Registro</a>
+        <a class="chip" href="#" title="Favoritos">❤</a>
+        <a class="chip" href="#" title="Carrito">🛒</a>
+      </nav>
     </div>
 
-    <div class="user-menu">
-      <a href="#">Peru</a>
-      <a href="#">👤 Acceder / Registro</a>
-      <a href="#">❤</a>
-      <a href="#">🛒</a>
+    <div class="subnav">
+      <div class="subnav__wrap" role="navigation" aria-label="Atajos de navegación">
+        <a class="pill pill--brand" href="#">Categorías</a>
+        <a class="pill" href="#">Los más vendidos</a>
+        <a class="pill" href="#">Cajas de CS2</a>
+        <a class="pill" href="#">Claves aleatorias</a>
+        <a class="pill" href="#">Software</a>
+        <a class="pill" href="#">Tarjetas regalo</a>
+        <a class="pill" href="#">Cuentas de juego</a>
+      </div>
     </div>
   </header>
 
-  <nav>
-    <a href="#">Categorías</a>
-    <a href="#">Los más vendidos</a>
-    <a href="#">Cajas de CS2</a>
-    <a href="#">Claves aleatorias</a>
-    <a href="#">Software</a>
-    <a href="#">contactanos</a>
-    
-    
-  </nav>
+  <!-- HERO GRID -->
+  <main class="container">
+    <section class="grid" aria-label="Destacados">
+      <article class="card hero-1">
+        <span class="badge">Más vendidos</span>
+        <div class="card__body">
+          <h2 class="h1">Demuestra tu habilidad con estilo</h2>
+          <p class="muted">Skins CS2 disponibles.</p>
+          <a href="#" class="cta">Ver ofertas</a>
+        </div>
+      </article>
 
+      <article class="card hero-2">
+        <span class="badge">Suscripción</span>
+        <div class="card__body">
+          <h2 class="h1">Plus Week</h2>
+          <p class="muted">¡Solo esta semana! Beneficios +30%.</p>
+          <a href="#" class="cta">Quiero saber más</a>
+        </div>
+      </article>
 
+      <article class="card hero-3">
+        <span class="badge">Promo</span>
+        <div class="card__body">
+          <h2 class="h1">Iníciate en las criptomonedas</h2>
+          <p class="muted">Deja que Bitjem te ayude.</p>
+          <a href="#" class="cta">Empezar</a>
+        </div>
+      </article>
+    </section>
 
+    <!-- PLATFORMS BAR -->
+    <section class="platforms" aria-label="Elige tu plataforma">
+      <div class="platform">💻 <strong>PC</strong></div>
+      <div class="platform">🕹️ <strong>Xbox</strong></div>
+      <div class="platform">🎮 <strong>PlayStation</strong></div>
+      <div class="platform">🎮 <strong>Nintendo</strong></div>
+      <div class="platform">📱 <strong>Mobile</strong></div>
+    </section>
 
-    <section id="repositorio" class="card">
-      <div class="card-header">
-        <i class="fa-brands fa-github"></i>
-        <h3>Repositorio</h3>
+    <!-- REPOSITORY CARD -->
+    <section class="section" id="repositorio">
+      <div class="card">
+        <div class="card__body">
+          <h3 class="h1">Repositorio</h3>
+          <p class="muted">Encuentra el código de este proyecto y futuras mejoras en mi GitHub.</p>
+          <a class="cta" href="https://github.com/Dustin200309/pro" target="_blank" rel="noopener noreferrer">
+            Ver en GitHub
+          </a>
+        </div>
       </div>
-      <p>Encuentra el código de este proyecto y futuras mejoras en mi GitHub.</p>
-      <a class="btn btn-ghost"
-         href="https://github.com/Dustin200309/pro"
-         target="_blank" rel="noopener noreferrer" aria-label="Abrir repositorio en una pestaña nueva">
-        <i class="fa-brands fa-github"></i> Ver en GitHub
-      </a>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Dustin y Ronny</p>
+    <p>© 2025 DYR • Demo UI estilo G2A</p>
   </footer>
-
-  <!-- Botón volver arriba -->
-  <button class="to-top" aria-label="Volver arriba">
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
-
-  <script>
-    // Accesible: muestra/oculta botón y hace scroll suave
-    const toTop = document.querySelector('.to-top');
-    const onScroll = () => {
-      if (window.scrollY > 300) toTop.classList.add('show');
-      else toTop.classList.remove('show');
-    };
-    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-    document.addEventListener('scroll', onScroll, { passive: true });
-  </script>
 </body>
 </html>
