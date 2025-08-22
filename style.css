@@ -22,9 +22,13 @@ header {
   font-weight: bold;
   color: #ffcc00; /* dorado */
   text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+  transition: transform 0.3s;
 }
 .logo span {
   color: #00c3ff; /* celeste */
+}
+.logo:hover {
+  transform: scale(1.05);
 }
 
 /* Buscador */
@@ -42,6 +46,9 @@ header {
   outline: none;
   background: #111;
   color: #fff;
+}
+.search input:focus {
+  box-shadow: 0 0 6px #00c3ff;
 }
 .search select {
   padding: 10px;
@@ -108,4 +115,137 @@ header {
   background: #00c3ff;
   color: #fff;
   font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .header__bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search {
+    width: 100%;
+  }
+}
+/* ================= HERO GRID ================= */
+.container {
+  padding: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  color: #fff;
+  min-height: 220px;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Fondos de ejemplo para los héroes */
+.hero-1 { background-image: url("https://picsum.photos/id/1011/600/400"); }
+.hero-2 { background-image: url("https://picsum.photos/id/1015/600/400"); }
+.hero-3 { background-image: url("https://picsum.photos/id/1019/600/400"); }
+
+.card__body {
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.1));
+  padding: 20px;
+  width: 100%;
+}
+
+.badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #00c3ff;
+  color: #fff;
+  font-size: 13px;
+  padding: 5px 10px;
+  border-radius: 12px;
+}
+
+/* Texto */
+.h1 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.muted {
+  color: #ccc;
+  font-size: 14px;
+}
+
+/* Botones CTA */
+.cta {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 18px;
+  border-radius: 6px;
+  background: #ffcc00;
+  color: #111;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.cta:hover {
+  background: #e6b800;
+}
+
+/* ================= PLATFORMS ================= */
+.platforms {
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.platform {
+  background: #1f2735;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.platform:hover {
+  background: #2d3a4d;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+  margin: 40px auto;
+  text-align: center;
+}
+.section .card {
+  background: #1a1f2c;
+  color: #fff;
+}
+.section .card__body {
+  padding: 20px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background: #0d1117;
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  font-size: 14px;
 }
