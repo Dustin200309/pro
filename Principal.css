@@ -1,6 +1,5 @@
-/* ================= HEADER ================= */
 header {
-  background: linear-gradient(90deg, #0d1117, #1a1f2c); /* degradado oscuro moderno */
+  background: linear-gradient(90deg, #0d1117, #1a1f2c); /* degradado  */
   padding: 15px 25px;
   display: flex;
   flex-direction: column;
@@ -8,7 +7,7 @@ header {
   box-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }
 
-/* Barra principal (logo + buscador + usuario) */
+/* log y buscador */
 .header__bar {
   display: flex;
   align-items: center;
@@ -16,22 +15,20 @@ header {
   gap: 20px;
 }
 
-/* Logo */
 .logo {
   font-size: 28px;
   font-weight: bold;
-  color: #ffcc00; /* dorado */
+  color: #ffcc00; 
   text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
   transition: transform 0.3s;
 }
 .logo span {
-  color: #00c3ff; /* celeste */
+  color: #00c3ff;
 }
 .logo:hover {
   transform: scale(1.05);
 }
 
-/* Buscador */
 .search {
   flex: 1;
   display: flex;
@@ -88,7 +85,6 @@ header {
   background: #333;
 }
 
-/* Submenú */
 .subnav {
   border-top: 1px solid #222;
   padding-top: 8px;
@@ -117,7 +113,6 @@ header {
   font-weight: bold;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
   .header__bar {
     flex-direction: column;
@@ -127,7 +122,6 @@ header {
     width: 100%;
   }
 }
-/* ================= HERO GRID ================= */
 .container {
   padding: 30px;
   max-width: 1200px;
@@ -157,10 +151,10 @@ header {
   transform: translateY(-5px);
 }
 
-/* Fondos de ejemplo para los héroes */
-.hero-1 { background-image: url("https://picsum.photos/id/1011/600/400"); }
-.hero-2 { background-image: url("https://picsum.photos/id/1015/600/400"); }
-.hero-3 { background-image: url("https://picsum.photos/id/1019/600/400"); }
+/* Juegos destacados*/
+.hero-1 { background-image: url("https://gmedia.playstation.com/is/image/SIEPDC/call-of-duty-black-ops-7-keyart-01-22may25$en?$1200px$"); }
+.hero-2 { background-image: url("https://gmedia.playstation.com/is/image/SIEPDC/madden-nfl-26-standard-edition_keyart-01-en-29may25?$1200px$"); }
+.hero-3 { background-image: url("https://gmedia.playstation.com/is/image/SIEPDC/Mafia-The-Old-Country-keyart-01-en-08may25?$1200px$"); }
 
 .card__body {
   background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.1));
@@ -179,7 +173,6 @@ header {
   border-radius: 12px;
 }
 
-/* Texto */
 .h1 {
   font-size: 20px;
   margin-bottom: 8px;
@@ -189,7 +182,6 @@ header {
   font-size: 14px;
 }
 
-/* Botones CTA */
 .cta {
   display: inline-block;
   margin-top: 10px;
@@ -205,7 +197,6 @@ header {
   background: #e6b800;
 }
 
-/* ================= PLATFORMS ================= */
 .platforms {
   margin: 40px 0;
   display: flex;
@@ -227,7 +218,6 @@ header {
   background: #2d3a4d;
 }
 
-/* ================= SECTIONS ================= */
 .section {
   margin: 40px auto;
   text-align: center;
@@ -240,7 +230,6 @@ header {
   padding: 20px;
 }
 
-/* ================= FOOTER ================= */
 footer {
   background: #0d1117;
   color: #aaa;
