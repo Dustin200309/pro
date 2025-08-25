@@ -229,7 +229,80 @@ header {
 .section .card__body {
   padding: 20px;
 }
+:root{
+  --sponsors-speed: 26s;        /* Velocidad menor mas rapido */
+  --sponsor-max-w: 140px;       /* Tamaño máximo de cada logo en desktop */
+  --sponsor-gap: 2.2rem;
+}
 
+.sponsors{
+  text-align: center;
+  padding: 3rem 1rem;
+  background:#111;
+  color:#fff;
+}
+.sponsors h2{
+  margin-bottom:1.25rem;
+  letter-spacing:.5px;
+}
+
+.sponsors__viewport{
+  position:relative;
+  overflow:hidden;
+  mask-image: linear-gradient(to right, transparent 0, #000 10%, #000 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 10%, #000 90%, transparent 100%);
+}
+
+.sponsors__track{
+  display:flex;
+  align-items:center;
+  gap: var(--sponsor-gap);
+  width:max-content;
+  animation: sponsors-scroll var(--sponsors-speed) linear infinite;
+  will-change: transform;
+}
+
+.sponsor{
+  flex:0 0 auto;
+  display:grid;
+  place-items:center;
+  min-height:72px; /* altura mínima para que no salte */
+}
+.sponsor img{
+  max-width: var(--sponsor-max-w);
+  height:auto;
+  filter: grayscale(100%) contrast(.95) brightness(.95);
+  opacity:.85;
+  transition: transform .25s ease, filter .25s ease, opacity .25s ease;
+  /* Sirve porque agregue svg y jpg */
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Hover bonito */
+.sponsor img:hover{
+  filter: grayscale(0%);
+  opacity:1;
+  transform: scale(1.06);
+}
+
+/* Pausa  */
+.sponsors__viewport:hover .sponsors__track{
+  animation-play-state: paused;
+}
+
+/* Animacion hacia la izq. */
+@keyframes sponsors-scroll{
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* Duplicamos el set => -50% cierra perfecto */
+}
+
+/* Modo cel o responsive */
+@media (max-width: 1024px){
+  :root{ --sponsor-max-w: 120px; --sponsor-gap:1.8rem; }
+}
+@media (max-width: 640px){
+  :root{ --sponsor-max-w: 100px; --sponsor-gap:1.4rem; }
+}
 footer {
   background: #0d1117;
   color: #aaa;
