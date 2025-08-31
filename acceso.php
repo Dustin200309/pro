@@ -2,7 +2,7 @@
 $servername = "localhost"; // Nombre del servidor (normalmente localhost para XAMPP)
 $username = "root";       // Nombre de usuario (por defecto es root en XAMPP)
 $password = "";           // Contraseña (por defecto está vacía para root)
-$database = "nombre_de_tu_base_de_datos"; // El nombre de tu base de datos
+$database = "DYR"; // El nombre de tu base de datos
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $database);
