@@ -4,15 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Página tipo marketplace gamer con buscador, menú y héroes destacados." />
-  <title>DYR — Marketplace Gamer (Demo)</title>
+  <title>DYR — Marketplace Gamer</title>
   <link rel="stylesheet" href="Principal.css" />
-
 </head>
 <body>
   <header class="header">
     <div class="header__bar">
       <div class="logo">D<span>YR</span></div>
-
+      <a class="logo" href="Principal.html" title="Logo"></a>
       <form class="search" role="search" aria-label="Buscar productos">
         <input type="text" placeholder="¿Qué estás buscando?" aria-label="Buscar" />
         <select aria-label="Elegir categoría">
@@ -32,15 +31,26 @@
       </nav>
     </div>
 
+    <!-- 🔹 Aquí cambié los títulos -->
     <div class="subnav">
-      <div class="subnav__wrap" role="navigation" aria-label="Atajos de navegación">
-        <a class="pill pill--brand" href="#">Categorías</a>
-        <a class="pill" href="#">Los más vendidos</a>
-        <a class="pill" href="#">Cajas de CS2</a>
-        <a class="pill" href="#">Claves aleatorias</a>
-        <a class="pill" href="#">Software</a>
-        <a class="pill" href="#">Tarjetas regalo</a>
-        <a class="pill" href="#">Cuentas de juego</a>
+      <div class="subnav__wrap" role="navigation" aria-label="Secciones de Términos y Condiciones">
+        <a class="pill" href="#definiciones">Definiciones</a>
+        <a class="pill" href="#aceptacion">Aceptación de los Términos</a>
+        <a class="pill" href="#cuentas">Cuentas y Verificación</a>
+        <a class="pill" href="#mercado">Funcionamiento del Marketplace</a>
+        <a class="pill" href="#listados">Listados, Precios y Disponibilidad</a>
+        <a class="pill" href="#pagos">Pagos, Comisiones y Facturación</a>
+        <a class="pill" href="#entrega">Entrega de Bienes Digitales</a>
+        <a class="pill" href="#garantias">Garantías, Reembolsos y Disputas</a>
+        <a class="pill" href="#prohibiciones">Conductas Prohibidas</a>
+        <a class="pill" href="#propiedad">Propiedad Intelectual</a>
+        <a class="pill" href="#privacidad">Privacidad y Datos</a>
+        <a class="pill" href="#cumplimiento">Cumplimiento, Sanciones y KYC/AML</a>
+        <a class="pill" href="#suspension">Suspensión y Terminación</a>
+        <a class="pill" href="#responsabilidad">Limitación de Responsabilidad</a>
+        <a class="pill" href="#indemnizacion">Indemnización</a>
+        <a class="pill" href="#ley">Ley Aplicable y Jurisdicción</a>
+        <a class="pill" href="#contacto">Contacto</a>
       </div>
     </div>
   </header>
@@ -85,7 +95,7 @@
     </section>
     
     <!-- REPOSITORY CARD -->
-        <section class="section" id="repositorio">
+    <section class="section" id="repositorio">
       <div class="card">
         <div class="card__body">
           <h3 class="h1">Repositorio</h3>
@@ -97,78 +107,74 @@
       </div>
 
       <section class="newsletter" aria-label="Suscríbete a ofertas">
-  <div class="newsletter__wrap">
-    <h2 class="h1">📩 Recibe las mejores ofertas</h2>
-    <p class="muted">Promos semanales, drops de skins y giftcards al mejor precio.</p>
+        <div class="newsletter__wrap">
+          <h2 class="h1">📩 Recibe las mejores ofertas</h2>
+          <p class="muted">Promos semanales, drops de skins y giftcards al mejor precio.</p>
 
-    <form class="newsletter__form" id="newsletterForm" novalidate>
-      <label class="sr-only" for="nl-email">Correo electrónico</label>
-      <input
-        id="nl-email"
-        name="email"
-        type="email"
-        inputmode="email"
-        autocomplete="email"
-        placeholder="Tu correo gamer..."
-        required
-        aria-required="true"
-      />
-      <button type="submit" class="cta">Suscribirme</button>
+          <form class="newsletter__form" id="newsletterForm" novalidate>
+            <label class="sr-only" for="nl-email">Correo electrónico</label>
+            <input
+              id="nl-email"
+              name="email"
+              type="email"
+              inputmode="email"
+              autocomplete="email"
+              placeholder="Tu correo gamer..."
+              required
+              aria-required="true"
+            />
+            <button type="submit" class="cta">Suscribirme</button>
+            <p class="newsletter__msg" id="nl-msg" aria-live="polite"></p>
+          </form>
 
-      <!-- Mensajes accesibles -->
-      <p class="newsletter__msg" id="nl-msg" aria-live="polite"></p>
-    </form>
+          <small class="newsletter__note">
+            Al suscribirte aceptas recibir emails ocasionales. Puedes darte de baja cuando quieras.
+          </small>
+        </div>
+      </section>
 
-    <small class="newsletter__note">
-      Al suscribirte aceptas recibir emails ocasionales. Puedes darte de baja cuando quieras.
-    </small>
-  </div>
-</section>
-    <section class="sponsors sponsors--carousel" aria-label="Sponsors de giftcards y gaming">
-    
-  <h2 class="h1">Partners & Giftcards</h2>
+      <section class="sponsors sponsors--carousel" aria-label="Sponsors de giftcards y gaming">
+        <h2 class="h1">Partners & Giftcards</h2>
+        <div class="sponsors__viewport">
+          <div class="sponsors__track">
+            <!-- logos -->
+            <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" alt="Steam"></div>
+            <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/PlayStation_logo.svg" alt="PSN"></div>
+            <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Xbox_logo_2012.svg" alt="Xbox"></div>
+            <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Nintendo.svg" alt="Nintendo eShop"></div>
+            <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Epic_Games_logo.svg" alt="Epic Games"></div>
+            <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Riot_Games_2022_logo.svg" alt="Riot Games"></div>
+            <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Battle.net_logo.svg" alt="Battle.net"></div>
+            <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/2/23/EA_Sports_logo_2016.svg" alt="EA"></div>
+            <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Roblox_logo_2022.svg" alt="Roblox"></div>
+            <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Google_Play_Arrow_logo.svg" alt="Google Play"></div>
+            <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></div>
+            <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon"></div>
+          </div>
+        </div>
 
-  <div class="sponsors__viewport">
-    <div class="sponsors__track">
-      <!-- Parte 1 -->
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" alt="Steam"></div>
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/PlayStation_logo.svg" alt="PSN"></div>
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Xbox_logo_2012.svg" alt="Xbox"></div>
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Nintendo.svg" alt="Nintendo eShop"></div>
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Epic_Games_logo.svg" alt="Epic Games"></div>
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Riot_Games_2022_logo.svg" alt="Riot Games"></div>
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Battle.net_logo.svg" alt="Battle.net"></div>
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/2/23/EA_Sports_logo_2016.svg" alt="EA"></div>
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Roblox_logo_2022.svg" alt="Roblox"></div>
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Google_Play_Arrow_logo.svg" alt="Google Play"></div>
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></div>
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon"></div>
+        <div class="comentarios">
+          <h4>Comentarios</h4>
+          <textarea id="comentario" placeholder="Escribe tu comentario..."></textarea>
+          <button onclick="agregarComentario()">Enviar</button>
+          <div class="comentario-lista" id="comentarios"></div>
+        </div>
+      </section>
+    </section>
+  </main>
 
-      <!-- Parte 2 -->
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" alt="Steam"></div>
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/PlayStation_logo.svg" alt="PSN"></div>
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Xbox_logo_2012.svg" alt="Xbox"></div>
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Nintendo.svg" alt="Nintendo eShop"></div>
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Epic_Games_logo.svg" alt="Epic Games"></div>
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Riot_Games_2022_logo.svg" alt="Riot Games"></div>
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Battle.net_logo.svg" alt="Battle.net"></div>
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/2/23/EA_Sports_logo_2016.svg" alt="EA"></div>
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Roblox_logo_2022.svg" alt="Roblox"></div>
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Google_Play_Arrow_logo.svg" alt="Google Play"></div>
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></div>
-      <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon"></div>
-    </div>
-  </div>
-  <div class="comentarios">
-     <h4>Comentarios</h4>
-      <textarea id="comentario" placeholder="Escribe tu comentario..."></textarea>
-  <button onclick="agregarComentario()">Enviar</button>
-  <div class="comentario-lista" id="comentarios"></div>
-</div>
-</section>
   <footer>
     <p>© 2025 DYR • Trabajo UTP</p>
   </footer>
-  <script> src="newsletter.js"</script>
+
+  <button class="chip" id="btnMapa" title="Mapa">🌍</button>
+
+  <script>
+    document.getElementById("btnMapa").addEventListener("click", function () {
+      window.open("https://www.google.com/maps/place/Lima,+Perú/", "_blank");
+    });
+  </script>
+
+  <script src="newsletter.js"></script>
 </body>
 </html>
