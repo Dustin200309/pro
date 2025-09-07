@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     cssLink.href = "../compartido/header.css"; // revisa la ruta!!
     document.head.appendChild(cssLink);
 
-    console.log("✅ Header y estilos cargados");
+    console.log(" Exitoso");
   } catch (error) {
-    console.error("❌ Error al cargar el header:", error);
+    console.error("No da", error);
   }
 });
