@@ -3,89 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Términos y Condiciones | D&R</title>
+  <title>Términos y Condiciones | DYR</title>
   <link rel="stylesheet" href="tyc.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- HEADER SIMPLE -->
-  <header class="header">
-    <div class="logo">D<span>YR</span></div>
-    <nav>
-      <a href="Principal.html">Inicio</a>
-      <a href="tyc.html" class="active">Términos</a>
-      <a href="#">Soporte</a>
-    </nav>
-  </header>
+  <!-- HEADER DINÁMICO -->
+  <div id="header-placeholder"></div>
 
-<<<<<<< HEAD
+  <!-- ÍNDICE DE CONTENIDOS -->
+  <aside class="toc" aria-label="Índice de contenidos">
+    <h2>Índice</h2>
+    <ol>
+      <li><a href="#uso">Uso de la Plataforma</a></li>
+      <li><a href="#cuentas">Cuentas de Usuario</a></li>
+      <li><a href="#pagos">Compras y Pagos</a></li>
+      <li><a href="#propiedad">Propiedad Intelectual</a></li>
+      <li><a href="#responsabilidad">Limitación de Responsabilidad</a></li>
+      <li><a href="#modificaciones">Modificaciones</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ol>
+  </aside>
+
   <!-- CONTENIDO PRINCIPAL -->
   <main class="container">
     <h1>Términos y Condiciones</h1>
-    <p class="intro">Bienvenido a <strong>D&R</strong>. Al acceder y utilizar nuestros servicios aceptas los siguientes términos:</p>
-=======
-  <nav aria-label="Índice de contenidos">
-    <h2>Índice</h2>
-    <ol>
-      <li><a href="#definiciones">Definiciones</a></li>
-      <li><a href="#aceptacion">Aceptación de los Términos</a></li>
-      <li><a href="#cuentas">Cuentas y Verificación</a></li>
-      <li><a href="#mercado">Funcionamiento del Marketplace</a></li>
-      <li><a href="#listados">Listados, Precios y Disponibilidad</a></li>
-      <li><a href="#pagos">Pagos, Comisiones y Facturación</a></li>
-      <li><a href="#entrega">Entrega de Bienes Digitales</a></li>
-      <li><a href="#garantias">Garantías, Reembolsos y Disputas</a></li>
-      <li><a href="#prohibiciones">Conductas Prohibidas</a></li>
-      <li><a href="#propiedad">Propiedad Intelectual</a></li>
-      <li><a href="#privacidad">Privacidad y Datos</a></li>
-      <li><a href="#cumplimiento">Cumplimiento, Sanciones y KYC/AML</a></li>
-      <li><a href="#suspension">Suspensión y Terminación</a></li>
-      <li><a href="#responsabilidad">Limitación de Responsabilidad</a></li>
-      <li><a href="#indemnizacion">Indemnización</a></li>
-      <li><a href="#ley">Ley Aplicable y Jurisdicción</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ol>
-  </nav>
->>>>>>> 075c54bf43a4ca1b75ec20cfd19de391dc248f25
+    <p class="intro">Bienvenido a <strong>DYR</strong>. Al acceder y utilizar nuestros servicios aceptas los siguientes términos:</p>
 
-    <section>
+    <section id="uso">
       <h2>1. Uso de la Plataforma</h2>
       <p>Nuestra página es un marketplace digital. Está prohibido el uso para actividades fraudulentas, ilegales o que perjudiquen a otros usuarios.</p>
     </section>
 
-    <section>
+    <section id="cuentas">
       <h2>2. Cuentas de Usuario</h2>
       <p>El usuario es responsable de la seguridad de su cuenta. Recomendamos no compartir credenciales con terceros.</p>
     </section>
 
-    <section>
+    <section id="pagos">
       <h2>3. Compras y Pagos</h2>
       <p>Las transacciones realizadas son finales. No se aceptan devoluciones salvo errores comprobados en el producto adquirido.</p>
     </section>
 
-    <section>
+    <section id="propiedad">
       <h2>4. Propiedad Intelectual</h2>
-      <p>Todo el contenido de D&R (logos, imágenes, textos y diseño) está protegido por derechos de autor.</p>
+      <p>Todo el contenido de DYR (logos, imágenes, textos y diseño) está protegido por derechos de autor.</p>
     </section>
 
-    <section>
+    <section id="responsabilidad">
       <h2>5. Limitación de Responsabilidad</h2>
-      <p>D&R no se hace responsable por el mal uso de claves, cuentas o productos digitales adquiridos por los usuarios.</p>
+      <p>DYR no se hace responsable por el mal uso de claves, cuentas o productos digitales adquiridos por los usuarios.</p>
     </section>
 
-    <section>
+    <section id="modificaciones">
       <h2>6. Modificaciones</h2>
       <p>Podemos actualizar estos términos en cualquier momento. Te notificaremos en la plataforma cuando existan cambios importantes.</p>
     </section>
 
-    <p class="closing">Al continuar usando D&R confirmas que has leído y aceptado estos términos.</p>
+    <section id="contacto">
+      <h2>7. Contacto</h2>
+      <p>Si tienes dudas sobre estos términos, puedes escribirnos a <a href="mailto:soporte@dyr.com">soporte@dyr.com</a>.</p>
+    </section>
+
+    <p class="closing">Al continuar usando DYR confirmas que has leído y aceptado estos términos.</p>
   </main>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p>© 2025 D&R Marketplace | Todos los derechos reservados</p>
+    <p>© 2025 DYR Marketplace | Todos los derechos reservados</p>
   </footer>
 
+  <!-- SCRIPT QUE CARGA EL HEADER -->
+  <script src="../compartido/header.js"></script>
 </body>
 </html>
