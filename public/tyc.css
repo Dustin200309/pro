@@ -95,17 +95,3 @@ p {
   text-align: center;
   color: #ffffff;
 }
-
-/* Footer */
-.footer {
-  text-align: center;
-  background: #0a0a0a;
-  border-top: 1px solid #222;
-  padding: 1rem;
-  font-size: 0.9rem;
-  color: #999;
-}
-
-.footer p {
-  margin: 0;
-}

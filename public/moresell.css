@@ -1,0 +1,89 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #121212;
+  color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor */
+.container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.container h1 {
+  font-size: 2rem;
+  color: #ff3c78;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.intro {
+  text-align: center;
+  color: #cccccc;
+  margin-bottom: 2rem;
+}
+
+/* Productos grid */
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.producto {
+  background: #1a1a1a;
+  border: 1px solid #2c2c2c;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s, border 0.2s;
+}
+
+.producto:hover {
+  transform: translateY(-5px);
+  border: 1px solid #ff3c78;
+}
+
+.producto img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.producto h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.producto p {
+  font-size: 0.9rem;
+  color: #cccccc;
+  margin-bottom: 1rem;
+}
+
+.precio {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ff3c78;
+  margin-bottom: 1rem;
+}
+
+.btn-comprar {
+  background: #ff3c78;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-comprar:hover {
+  background: #ff6699;
+}

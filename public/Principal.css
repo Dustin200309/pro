@@ -236,7 +236,7 @@
   flex:0 0 auto;
   display:grid;
   place-items:center;
-  min-height:72px; /* altura mínima para que no salte */
+  min-height:72px; 
 }
 .sponsor img{
   max-width: var(--sponsor-max-w);
@@ -244,7 +244,6 @@
   filter: grayscale(100%) contrast(.95) brightness(.95);
   opacity:.85;
   transition: transform .25s ease, filter .25s ease, opacity .25s ease;
-  /* Sirve porque agregue svg y jpg */
   image-rendering: -webkit-optimize-contrast;
 }
 
@@ -263,21 +262,12 @@
 /* Animacion hacia la izq. */
 @keyframes sponsors-scroll{
   from { transform: translateX(0); }
-  to   { transform: translateX(-50%); } /* Duplicamos el set => -50% cierra perfecto */
+  to   { transform: translateX(-50%); } 
 }
 
-/* Modo cel o responsive */
 @media (max-width: 1024px){
   :root{ --sponsor-max-w: 120px; --sponsor-gap:1.8rem; }
 }
 @media (max-width: 640px){
   :root{ --sponsor-max-w: 100px; --sponsor-gap:1.4rem; }
-}
-footer {
-  background: #0d1117;
-  color: #aaa;
-  text-align: center;
-  padding: 20px;
-  margin-top: 50px;
-  font-size: 14px;
 }
