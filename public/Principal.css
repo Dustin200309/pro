@@ -1,0 +1,480 @@
+/* Header general */
+header {
+  background: linear-gradient(90deg, #0d1117, #1a1f2c);
+  padding: 15px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.7);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+}
+
+/* Barra principal: logo, buscador y usuario */
+.header__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo {
+  font-size: 30px;
+  font-weight: 900;
+  color: #ffcc00;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  transition: transform 0.3s ease;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+}
+.logo span {
+  color: #00c3ff;
+}
+.logo:hover,
+.logo:focus {
+  transform: scale(1.1);
+  outline: none;
+}
+
+/* Buscador */
+.search {
+  flex: 1 1 400px;
+  display: flex;
+  background: #222;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 195, 255, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+.search input {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  outline: none;
+  background: #111;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+.search input::placeholder {
+  color: #666;
+}
+.search input:focus {
+  background: #1a1f2c;
+  box-shadow: inset 0 0 8px #00c3ff;
+}
+.search select {
+  padding: 12px 16px;
+  border: none;
+  outline: none;
+  background: #222;
+  color: #ccc;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.search select:hover,
+.search select:focus {
+  background: #333;
+  color: #fff;
+}
+.search button {
+  background: #00c3ff;
+  border: none;
+  color: #fff;
+  padding: 0 18px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search button:hover,
+.search button:focus {
+  background: #0099cc;
+  outline: none;
+}
+
+/* Menú usuario */
+.user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  min-width: 200px;
+  justify-content: flex-end;
+}
+.user .chip {
+  background: #222;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.user .chip:hover,
+.user .chip:focus {
+  background: #333;
+  box-shadow: 0 0 12px #00c3ff;
+  outline: none;
+}
+
+/* Subnavegación */
+.subnav {
+  border-top: 1px solid #222;
+  padding-top: 12px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #00c3ff transparent;
+}
+.subnav::-webkit-scrollbar {
+  height: 6px;
+}
+.subnav::-webkit-scrollbar-thumb {
+  background: #00c3ff;
+  border-radius: 10px;
+}
+.subnav__wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 14px;
+}
+.subnav__wrap .pill {
+  background: #1f2735;
+  color: #ddd;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  transition: background 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+}
+.subnav__wrap .pill:hover,
+.subnav__wrap .pill:focus {
+  background: #2d3a4d;
+  color: #fff;
+  outline: none;
+}
+.subnav__wrap .pill--brand {
+  background: #00c3ff;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 0 10px #00c3ff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header__bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search {
+    width: 100%;
+  }
+  .user {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  .subnav__wrap {
+    gap: 8px;
+  }
+}
+
+/* Opcional: mejoras visuales en scrollbar para subnav */
+
+.container {
+  padding: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  color: #fff;
+  min-height: 220px;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Juegos destacados*/
+.hero-1 { background-image: url("https://gmedia.playstation.com/is/image/SIEPDC/call-of-duty-black-ops-7-keyart-01-22may25$en?$1200px$"); }
+.hero-2 { background-image: url("https://gmedia.playstation.com/is/image/SIEPDC/madden-nfl-26-standard-edition_keyart-01-en-29may25?$1200px$"); }
+.hero-3 { background-image: url("https://gmedia.playstation.com/is/image/SIEPDC/Mafia-The-Old-Country-keyart-01-en-08may25?$1200px$"); }
+
+.card__body {
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.1));
+  padding: 20px;
+  width: 100%;
+}
+
+.badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #00c3ff;
+  color: #fff;
+  font-size: 13px;
+  padding: 5px 10px;
+  border-radius: 12px;
+}
+
+.h1 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.muted {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 18px;
+  border-radius: 6px;
+  background: #ffcc00;
+  color: #111;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.cta:hover {
+  background: #e6b800;
+}
+
+.platforms {
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.platform {
+  background: #1f2735;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.platform:hover {
+  background: #2d3a4d;
+}
+
+.section {
+  margin: 40px auto;
+  text-align: center;
+}
+.section .card {
+  background: #1a1f2c;
+  color: #fff;
+}
+.section .card__body {
+  padding: 20px;
+}
+.newsletter{
+  margin: 3rem auto;
+  padding: 3rem 1rem;
+  background: radial-gradient(1200px 600px at 10% -20%, #1f1f1f 20%, #0f0f0f 70%);
+  color: #fff;
+  border: 1px solid #1e1e1e;
+  border-radius: 18px;
+}
+.newsletter__wrap{
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+.newsletter .h1{
+  margin-bottom: .5rem;
+}
+.newsletter .muted{
+  color: #bbb;
+  margin-bottom: 1.5rem;
+}
+
+.newsletter__form{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .75rem;
+  align-items: center;
+  justify-content: center;
+  max-width: 640px;
+  margin: 0 auto 1rem;
+}
+
+.newsletter__form input[type="email"]{
+  width: 100%;
+  padding: .9rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #2a2a2a;
+  background: #161616;
+  color: #fff;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.newsletter__form input::placeholder{
+  color: #777;
+}
+.newsletter__form input:focus{
+  border-color: #6ee7ff;
+  box-shadow: 0 0 0 3px rgba(110,231,255,.15);
+}
+
+.newsletter__form .cta{
+  padding: .9rem 1.2rem;
+  border-radius: 12px;
+  border: 0;
+  background: linear-gradient(90deg, #00d4ff, #5b7bff);
+  color: #0b0b0b;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .08s ease;
+  white-space: nowrap;
+}
+.newsletter__form .cta:active{ transform: translateY(1px); }
+
+.newsletter__msg{
+  grid-column: 1 / -1;
+  margin: .25rem 0 0;
+  font-size: .95rem;
+  min-height: 1.2em; /* evita “salto” al aparecer */
+}
+.newsletter__msg--ok{ color: #7cfb9b; }
+.newsletter__msg--err{ color: #ff8a8a; }
+
+.newsletter__note{
+  color:#888;
+  font-size: .85rem;
+}
+
+/* Responsive */
+@media (max-width: 560px){
+  .newsletter__form{
+    grid-template-columns: 1fr;
+  }
+  .newsletter__form .cta{
+    width: 100%;
+  }
+}
+
+/* Utilidad para lectores de pantalla */
+.sr-only{
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden; clip: rect(1px,1px,1px,1px);
+  white-space: nowrap; border: 0; padding: 0; margin: -1px;
+}
+:root{
+  --sponsors-speed: 26s;        /* Velocidad menor mas rapido */
+  --sponsor-max-w: 140px;       /* Tamaño máximo de cada logo en desktop */
+  --sponsor-gap: 2.2rem;
+}
+
+.sponsors{
+  text-align: center;
+  padding: 3rem 1rem;
+  background:#111;
+  color:#fff;
+}
+.sponsors h2{
+  margin-bottom:1.25rem;
+  letter-spacing:.5px;
+}
+
+.sponsors__viewport{
+  position:relative;
+  overflow:hidden;
+  mask-image: linear-gradient(to right, transparent 0, #000 10%, #000 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 10%, #000 90%, transparent 100%);
+}
+
+.sponsors__track{
+  display:flex;
+  align-items:center;
+  gap: var(--sponsor-gap);
+  width:max-content;
+  animation: sponsors-scroll var(--sponsors-speed) linear infinite;
+  will-change: transform;
+}
+
+.sponsor{
+  flex:0 0 auto;
+  display:grid;
+  place-items:center;
+  min-height:72px; /* altura mínima para que no salte */
+}
+.sponsor img{
+  max-width: var(--sponsor-max-w);
+  height:auto;
+  filter: grayscale(100%) contrast(.95) brightness(.95);
+  opacity:.85;
+  transition: transform .25s ease, filter .25s ease, opacity .25s ease;
+  /* Sirve porque agregue svg y jpg */
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Hover bonito */
+.sponsor img:hover{
+  filter: grayscale(0%);
+  opacity:1;
+  transform: scale(1.06);
+}
+
+/* Pausa  */
+.sponsors__viewport:hover .sponsors__track{
+  animation-play-state: paused;
+}
+
+/* Animacion hacia la izq. */
+@keyframes sponsors-scroll{
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* Duplicamos el set => -50% cierra perfecto */
+}
+
+/* Modo cel o responsive */
+@media (max-width: 1024px){
+  :root{ --sponsor-max-w: 120px; --sponsor-gap:1.8rem; }
+}
+@media (max-width: 640px){
+  :root{ --sponsor-max-w: 100px; --sponsor-gap:1.4rem; }
+}
+footer {
+  background: #0d1117;
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  font-size: 14px;
+}
