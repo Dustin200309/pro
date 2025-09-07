@@ -1,15 +1,20 @@
-// Cargar header dinámicamente
-fetch('../compartido/header.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('header-placeholder').innerHTML = data;
+document.addEventListener("DOMContentLoaded", async () => {
+  const placeholder = document.getElementById("header-placeholder");
 
-    // Mueve aquí cualquier código relacionado con el header
-    const btnMapa = document.getElementById("btnMapa");
-    if (btnMapa) {
-      btnMapa.addEventListener("click", function () {
-        window.open("https://www.google.com/maps/place/Lima,+Perú/", "_blank");
-      });
-    }
-  })
-  .catch(error => console.error("Error cargando el header:", error));
+  try {
+    // Cargar el HTML del header
+    const response = await fetch("../compartido/header.html");
+    const html = await response.text();
+    placeholder.innerHTML = html;
+
+    // Agregar el CSS del header al <head>
+    const cssLink = document.createElement("link");
+    cssLink.rel = "stylesheet";
+    cssLink.href = "../compartido/header.css"; // revisa la ruta!!
+    document.head.appendChild(cssLink);
+
+    console.log("✅ Header y estilos cargados");
+  } catch (error) {
+    console.error("❌ Error al cargar el header:", error);
+  }
+});

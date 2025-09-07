@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultados de búsqueda</title>
+  <link rel="stylesheet" href="Principal.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main>
+    <h1>Resultados de búsqueda</h1>
+    <div id="resultados"></div>
+  </main>
+
+  <script src="../compartido/header.js"></script>
+  <script>
+    // Obtener el valor del parámetro "q" en la URL
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get("q");
+
+    const resultadosDiv = document.getElementById("resultados");
+
+    if (query) {
+      resultadosDiv.innerHTML = `<p>Buscaste: <strong>${query}</strong></p>`;
+    } else {
+      resultadosDiv.innerHTML = "<p>No se ingresó ninguna búsqueda.</p>";
+    }
+  </script>
+</body>
+</html>
