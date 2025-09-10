@@ -7,12 +7,31 @@ document.addEventListener("DOMContentLoaded", async () => {
         const html = await res.text();
         placeholder.innerHTML = html;
 
+        // 👉 Insertar CSS solo si no existe y mantener orden
         if (cssPath && !document.querySelector(`link[href="${cssPath}"]`)) {
           const cssLink = document.createElement("link");
           cssLink.rel = "stylesheet";
           cssLink.href = cssPath;
-          document.head.appendChild(cssLink);
+          const firstLink = document.querySelector("link[rel='stylesheet']");
+          if (firstLink) {
+            document.head.insertBefore(cssLink, firstLink);
+          } else {
+            document.head.appendChild(cssLink);
+          }
         }
+
+        // 👉 Solo enganchar eventos después de cargar el header
+        if (placeholderId === "header-placeholder") {
+          const btnRegister = document.getElementById("btnRegister");
+          if (btnRegister) {
+            btnRegister.addEventListener("click", (e) => {
+              e.preventDefault();
+              // 🔹 Ruta corregida porque User.html está en /usuario/
+              window.location.href = "../usuario/User.html";
+            });
+          }
+        }
+
       } catch (err) {
         console.error(`❌ Error cargando ${filePath}:`, err);
       }
