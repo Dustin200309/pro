@@ -63,32 +63,32 @@
         </div>
       </div>
 
+      <!-- NEWSLETTER -->
       <section class="newsletter" aria-label="Suscríbete a ofertas">
-        <div class="newsletter__wrap">
-          <h2 class="h1">📩 Recibe las mejores ofertas</h2>
-          <p class="muted">Promos semanales, drops de skins y giftcards al mejor precio.</p>
+  <div class="newsletter__wrap">
+    <h2 class="h1">📩 Recibe las mejores ofertas</h2>
+    <p class="muted">Promos semanales, drops de skins y giftcards al mejor precio.</p>
 
-          <form class="newsletter__form" id="newsletterForm" novalidate>
-            <label class="sr-only" for="nl-email">Correo electrónico</label>
-            <input
-              id="nl-email"
-              name="email"
-              type="email"
-              inputmode="email"
-              autocomplete="email"
-              placeholder="Tu correo gamer..."
-              required
-              aria-required="true"
-            />
-            <button type="submit" class="cta">Suscribirme</button>
-            <p class="newsletter__msg" id="nl-msg" aria-live="polite"></p>
-          </form>
+    <form class="newsletter__form" id="newsletterForm" action="/PRO/usuario/suscribir.php" method="POST">
+      <label class="sr-only" for="nl-email">Correo electrónico</label>
+      <input
+        id="nl-email"
+        name="email"
+        type="email"
+        inputmode="email"
+        autocomplete="email"
+        placeholder="Tu correo gamer..."
+        required
+        aria-required="true"
+      />
+      <button type="submit" class="cta">Suscribirme</button>
+    </form>
 
-          <small class="newsletter__note">
-            Al suscribirte aceptas recibir emails ocasionales. Puedes darte de baja cuando quieras.
-          </small>
-        </div>
-      </section>
+    <small class="newsletter__note">
+      Al suscribirte aceptas recibir emails ocasionales. Puedes darte de baja cuando quieras.
+    </small>
+  </div>
+</section>
 
       <section class="sponsors sponsors--carousel" aria-label="Sponsors de giftcards y gaming">
         <h2 class="h1">Partners & Giftcards</h2>
