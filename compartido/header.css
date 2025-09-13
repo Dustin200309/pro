@@ -5,24 +5,22 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #111;
-  color: #fff;
-}
-
-/* HEADER GENERAL */
+/* HEADER */
 .header {
   background: #000;
   border-bottom: 1px solid #222;
+  font-family: Arial, sans-serif;
+  color: #fff;
 }
 
+/* 🔹 Barra superior */
 .header__bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 12px 20px;
   gap: 20px;
+  position: relative;
 }
 
 /* LOGO */
@@ -34,7 +32,7 @@ body {
   letter-spacing: 1px;
 }
 
-/* NAV PRINCIPAL */
+/* 🔹 Navegación */
 .nav {
   display: flex;
   gap: 20px;
@@ -51,7 +49,7 @@ body {
   color: #ff0;
 }
 
-/* BUSCADOR */
+/* 🔹 Buscador */
 .search {
   display: flex;
   flex: 1;
@@ -78,7 +76,7 @@ body {
   font-size: 14px;
 }
 
-/* MENÚ DE USUARIO */
+/* 🔹 Usuario */
 .user {
   display: flex;
   gap: 12px;
@@ -88,13 +86,14 @@ body {
   color: #fff;
   text-decoration: none;
   font-size: 14px;
+  transition: color 0.2s;
 }
 
 .user a:hover {
   color: #ff0;
 }
 
-/* SUBNAV */
+/* 🔹 Subnav */
 .subnav {
   background: #111;
   border-top: 1px solid #222;
@@ -127,4 +126,47 @@ body {
   background: #ff0;
   color: #000;
   font-weight: bold;
+}
+
+/* 🔹 Botón hamburguesa */
+.hamburger {
+  display: none;
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  /* Esconder menú y mostrar hamburguesa */
+  .nav {
+    display: none;
+    flex-direction: column;
+    background: #000;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    border-top: 1px solid #222;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .search {
+    max-width: 200px;
+  }
+
+  .subnav__wrap {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
