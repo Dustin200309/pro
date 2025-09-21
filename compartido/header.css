@@ -1,11 +1,9 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* HEADER */
 .header {
   background: #000;
   border-bottom: 1px solid #222;
@@ -13,7 +11,7 @@
   color: #fff;
 }
 
-/* 🔹 Barra superior */
+/*  Barra superior */
 .header__bar {
   display: flex;
   align-items: center;
@@ -32,7 +30,7 @@
   letter-spacing: 1px;
 }
 
-/* 🔹 Navegación */
+/*  Navegación */
 .nav {
   display: flex;
   gap: 20px;
@@ -49,7 +47,7 @@
   color: #ff0;
 }
 
-/* 🔹 Buscador */
+/*  Buscador */
 .search {
   display: flex;
   flex: 1;
@@ -137,10 +135,8 @@
   color: #fff;
   cursor: pointer;
 }
-
-/* 📱 RESPONSIVE */
 @media (max-width: 768px) {
-  /* Esconder menú y mostrar hamburguesa */
+
   .nav {
     display: none;
     flex-direction: column;

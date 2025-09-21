@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->Subject = 'Bienvenido a DYR 🎮';
         $mail->Body    = "
             <h2>¡Te has suscrito a DYR!</h2>
-            <p>Bienvenido a ser parte de nuestra familia gamer 🎮✨</p>
+            <p>Bienvenido a ser parte de nuestra familia gamer </p>
             <p>Esperamos que encuentres lo que estás buscando.</p>
         ";
 

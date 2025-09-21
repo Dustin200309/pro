@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const html = await res.text();
         placeholder.innerHTML = html;
 
-        // 👉 Insertar CSS solo si no existe
+        //  Insertar CSS solo si no existe
         if (cssPath && !document.querySelector(`link[href="${cssPath}"]`)) {
           const cssLink = document.createElement("link");
           cssLink.rel = "stylesheet";
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           document.head.appendChild(cssLink);
         }
 
-        // 👉 Eventos del header
+        //  Eventos del header
         if (placeholderId === "header-placeholder") {
           // Botón "Regístrate"
           const btnRegister = document.getElementById("btnRegister");

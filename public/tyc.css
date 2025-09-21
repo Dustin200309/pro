@@ -1,6 +1,6 @@
 /* Fuente general */
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Comic sans", sans-serif;
   margin: 0;
   padding: 0;
   background: #0d0d0d;
@@ -27,8 +27,8 @@ h1 {
 h2 {
   font-size: 1.4rem;
   margin-top: 2rem;
-  color: #ff3c78; /* color acento gamer */
-  border-left: 4px solid #ff3c78;
+  color: #f7f4f0; /* color acento gamer */
+  border-left: 4px solid #f7f4f5;
   padding-left: 0.5rem;
 }
 
@@ -74,7 +74,7 @@ section {
 }
 
 .toc a {
-  color: #ff3c78;
+  color: #f6f5f5;
   text-decoration: none;
   transition: color 0.2s;
 }

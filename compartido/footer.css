@@ -1,7 +1,7 @@
 .footer {
   background: #111;
   color: #eee;
-  padding: 2rem 1rem;
+  padding: 2rem 1.5rem 1rem;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -9,14 +9,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .footer__brand h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.8rem;
+  font-weight: 700;
   color: #fff;
+  margin: 0;
 }
 
 .footer__brand span {
@@ -25,21 +27,22 @@
 
 .footer__payments h3,
 .footer__socials h3 {
-  margin-bottom: 0.5rem;
   font-size: 1rem;
   font-weight: 600;
+  margin: 0 0 0.5rem 0;
 }
 
 .footer__icons {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.8rem;
 }
 
 .footer__icons img {
   width: 28px;
   height: 28px;
-  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg);
-  transition: transform 0.2s ease;
+  filter: invert(100%);
+  transition: transform 0.3s ease;
 }
 
 .footer__icons img:hover {
@@ -47,9 +50,33 @@
 }
 
 .footer__bottom {
-  border-top: 1px solid #333;
   text-align: center;
+  border-top: 1px solid #333;
   padding-top: 1rem;
   font-size: 0.9rem;
   color: #aaa;
+  margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer__top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__brand h2 {
+    font-size: 1.5rem;
+  }
+
+  .footer__payments,
+  .footer__socials {
+    align-items: center;
+  }
+
+  .footer__icons img {
+    width: 26px;
+    height: 26px;
+  }
 }
