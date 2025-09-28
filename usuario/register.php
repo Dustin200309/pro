@@ -1,36 +1,39 @@
 <?php
-// Conectar con la base de datos
-include("conexion.php");
+session_start();
+include ("Location: ../config/conexion.php"); 
 
-// Verificar que los datos vienen del formulario
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = $_POST['nombre'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $nombre = trim($_POST['nombre'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $password = $_POST['password'] ?? '';
 
-    // Validar que no estén vacíos
-    if (!empty($nombre) && !empty($email) && !empty($password)) {
-        
-        // Encriptar contraseña (seguridad)
-        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-
-        // Insertar usuario
-        $sql = "INSERT INTO users (nombre, email, password) VALUES (?, ?, ?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sss", $nombre, $email, $passwordHash);
-
-        if ($stmt->execute()) {
-            echo "<h3>✅ Usuario registrado con éxito</h3>";
-            echo "<a href='user.html'>Volver al login</a>";
-        } else {
-            echo "<h3>❌ Error: " . $stmt->error . "</h3>";
-        }
-
-        $stmt->close();
-    } else {
-        echo "<h3>⚠️ Todos los campos son obligatorios</h3>";
+    if ($nombre === '' || $email === '' || $password === '') {
+        header("Location: " . ($_SERVER['HTTP_REFERER'] ?? "../public/principal.html"));
+        exit;
     }
-}
 
-$conn->close();
+    // Verificar duplicado
+    $check = $conn->prepare("SELECT id FROM users WHERE email = ?");
+    $check->bind_param("s", $email);
+    $check->execute();
+    $check->store_result();
+
+    if ($check->num_rows > 0) {
+        // correo duplicado: redirige de vuelta (podrías agregar un ?error=1)
+        header("Location: " . ($_SERVER['HTTP_REFERER'] ?? "../public/principal.html"));
+        exit;
+    }
+
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+    $stmt = $conn->prepare("INSERT INTO users (nombre, email, password) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $nombre, $email, $hash);
+    if ($stmt->execute()) {
+        // crear sesión
+        $_SESSION['user_id'] = $stmt->insert_id;
+        $_SESSION['nombre'] = $nombre;
+    }
+    // redirigir de vuelta a la página anterior (o a principal)
+    header("Location: " . ($_SERVER['HTTP_REFERER'] ?? "../public/principal.html"));
+    exit;
+}
 ?>

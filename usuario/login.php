@@ -21,10 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Validar contraseña
             if (password_verify($password, $usuario['password'])) {
-                echo "<h2>✅ Bienvenido, " . $usuario['nombre'] . "!</h2>";
+                echo "<h2> Bienvenido, " . $usuario['nombre'] . "!</h2>";
                 echo "<a href='user.html'>Cerrar sesión</a>";
             } else {
-                echo "<h3>❌ Contraseña incorrecta</h3>";
+                echo "<h3> Contraseña incorrecta</h3>";
                 echo "<a href='user.html'>Intentar de nuevo</a>";
             }
         } else {

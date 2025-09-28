@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";       // Servidor
 $user = "root";            // Usuario de MySQL
-$pass = "42404425";        // Tu contraseña de MySQL
+$pass = "";                // XAMPP root normalmente NO tiene contraseña
 $db   = "login_system";    // Base de datos
 
 $conn = new mysqli($host, $user, $pass, $db);
