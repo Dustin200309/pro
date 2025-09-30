@@ -7,33 +7,41 @@
   <title>Futuros — Próximamente</title>
 </head>
 <body>
-  <main>
-    <section>
-      <div>
-        <h1>Futuros</h1>
-        <p>Estamos preparando algo grande. Próximamente disponible.</p>
-      </div>
+  <main class="container">
+    <section class="hero">
+      <h1>🚀 Futuros</h1>
+      <p>Estamos preparando algo grande.<br> Muy pronto disponible.</p>
+    </section>
 
-      <div>
-        <h2>Cuenta regresiva</h2>
-        <p>Días: 10 | Horas: 00 | Minutos: 00 | Segundos: 00</p>
-      </div>
-
-      <div>
-        <h2>Suscripción</h2>
-        <form>
-          <label for="email">Correo electrónico:</label>
-          <input type="email" id="email" name="email" required />
-          <button type="submit">Enviar</button>
-        </form>
-      </div>
-
-      <div>
-        <h2>Contacto</h2>
-        <p>Email: hola@futuros.example</p>
-        <p>Redes sociales: Twitter | Instagram | Discord</p>
+    <section class="countdown">
+      <h2>⏳ Cuenta regresiva</h2>
+      <div id="timer">
+        <span><strong id="days">10</strong> Días</span>
+        <span><strong id="hours">00</strong> Horas</span>
+        <span><strong id="minutes">00</strong> Minutos</span>
+        <span><strong id="seconds">00</strong> Segundos</span>
       </div>
     </section>
+
+    <section class="subscribe">
+      <h2>📩 Suscripción</h2>
+      <form>
+        <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required />
+        <button type="submit">Notificarme</button>
+      </form>
+    </section>
+
+    <section class="contact">
+      <h2> Contacto</h2>
+      <p>Email: <a href="mailto:hola@futuros.example">hola@futuros.example</a></p>
+      <p>Redes sociales: 
+        <a href="#">Twitter</a> | 
+        <a href="#">Instagram</a> | 
+        <a href="#">Discord</a>
+      </p>
+    </section>
   </main>
+
+  <script src="futuros.js"></script>
 </body>
 </html>
