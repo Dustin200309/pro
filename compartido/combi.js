@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const html = await res.text();
         placeholder.innerHTML = html;
 
-        // 👉 Insertar CSS solo si no existe
+        //  Insertar CSS solo si no existe
         if (cssPath && !document.querySelector(`link[href="${cssPath}"]`)) {
           const cssLink = document.createElement("link");
           cssLink.rel = "stylesheet";
