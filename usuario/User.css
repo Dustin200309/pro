@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: 0;
+  font-family: "Montserrat", sans-serif;
 }
 
 body{
@@ -23,3 +27,13 @@ body{
   border: 2px solid green;
   width: 100%;
 }
+
+.container_form form{
+  border: 2px solid red;
+  height: 100%;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+/* Cambio de prueba Ronny 2 */
