@@ -1,0 +1,32 @@
+/* extra.css - estilos nuevos para que se note el cambio */
+
+/* Aplica un fondo oscuro al body */
+body {
+  background-color: #121212; /* gris oscuro */
+  color: #00ffcc; /* texto verde-agua brillante */
+  font-family: Arial, sans-serif;
+}
+
+/* Estilo de títulos */
+h1, h2, h3 {
+  color: #ff0066; /* rosa fuerte */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Botones llamativos */
+button {
+  background-color: #00ffcc;
+  color: #121212;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #ff0066;
+  color: #fff;
+}
