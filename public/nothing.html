@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prueba de contribución — Nothing</title>
+  <style>
+    /* Estilos simples y llamativos para que se note el cambio */
+    :root {
+      --bg: #0f1720;
+      --accent: #00ffd1;
+      --highlight: #ff4d6d;
+      --card: #0b1220;
+      --text: #e6f7f4;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at 10% 10%, rgba(0,255,209,0.06), transparent 20%),
+                  linear-gradient(180deg, #071021, #0f1720 60%);
+      color: var(--text);
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    .card {
+      width: min(920px, 92%);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.04);
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+      text-align: center;
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: 2.1rem;
+      color: var(--accent);
+      letter-spacing: 1px;
+    }
+    p.lead {
+      margin: 0 0 18px;
+      color: #bfeee6;
+      font-size: 1.05rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(0,255,209,0.12), rgba(255,77,109,0.08));
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 16px;
+      border: 1px solid rgba(0,255,209,0.06);
+    }
+    .meta {
+      margin-top: 14px;
+      font-size: 0.95rem;
+      color: #98e9da;
+    }
+    footer {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: #9bdccd;
+      opacity: 0.9;
+    }
+    a {
+      color: var(--highlight);
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge">PRUEBA DE COMMIT</div>
+    <h1>Archivo de prueba — Nothing</h1>
+    <p class="lead">Este archivo se añadió para verificar que el commit y push se vean claramente en GitHub.</p>
+
+    <div class="meta">
+      <strong>Autor:</strong> Dustin / samirrodassanchez36@gmail.com<br>
+      <strong>Propósito:</strong> Confirmar contribución visible para la evaluación.
+    </div>
+
+    <div id="timestamp" class="meta" style="margin-top:12px;"></div>
+
+    <footer>
+      Abre este archivo en GitHub (rama <strong>Dustin</strong>) o al hacer merge en <strong>main</strong> para que el profesor vea la contribución.
+    </footer>
+  </div>
+
+  <script>
+    // Mostrar fecha/hora actual (para que sea un cambio claramente visible)
+    const now = new Date();
+    const stamp = now.toLocaleString('es-PE', {
+      year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: '2-digit', minute: '2-digit', second: '2-digit'
+    });
+    document.getElementById('timestamp').innerHTML = '<strong>Fecha/Hora (local):</strong> ' + stamp;
+  </script>
+</body>
+</html>
