@@ -1,11 +1,9 @@
 /* extra.css - estilos nuevos para que se note el cambio */
-
-/* Aplica un fondo oscuro al body */
+/* Cambio de prueba para confirmar en GitHub */
 body {
-  background-color: #121212; /* gris oscuro */
-  color: #00ffcc; /* texto verde-agua brillante */
-  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
 }
+
 
 /* Estilo de títulos */
 h1, h2, h3 {
