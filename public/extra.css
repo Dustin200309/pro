@@ -1,30 +1,42 @@
 /* extra.css - estilos nuevos para que se note el cambio */
 /* Cambio de prueba para confirmar en GitHub */
+
+/* Fondo general */
 body {
   background-color: #f0f0f0;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #222;
 }
-
 
 /* Estilo de títulos */
 h1, h2, h3 {
   color: #ff0066; /* rosa fuerte */
   text-transform: uppercase;
   letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
 }
 
 /* Botones llamativos */
 button {
-  background-color: #00ffcc;
+  background: linear-gradient(135deg, #00ffcc, #00bfa5);
   color: #121212;
   border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
+  padding: 12px 24px;
+  border-radius: 10px;
   font-weight: bold;
+  font-size: 1rem;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 button:hover {
-  background-color: #ff0066;
+  background: linear-gradient(135deg, #ff0066, #d60055);
   color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
