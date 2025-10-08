@@ -23,7 +23,7 @@ body{
   height: 500px;
   display: flex;
 }
-.container_form{
+.container-form{
   border: 2px solid green;
   width: 100%;
 }
@@ -36,4 +36,22 @@ body{
   justify-content: center;
   align-items: center;
 }
-/* Cambio de prueba Ronny 2 */
+
+.container-form h2{
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.social-networks{
+  
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+  }
+
+.social-networks ion-icon{
+  border: 1px solid #c9cccb;
+  border-radius: 6px;
+  padding: 8px;
+  cursor: pointer;
+}
