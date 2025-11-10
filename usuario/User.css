@@ -1,69 +1,126 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: 0;
-  font-family: "Montserrat", sans-serif;
+:root{
+  /* 🔵 Cambia estos dos valores si quieres el azul HLC */
+  --brand:#18b69e;        /* Verde actual */
+  --brandDark:#149883;    /* Verde oscuro para el degradado */
+  /* --brand:#00B0FF;     Azul HLC */
+  /* --brandDark:#0093d6; Azul oscuro */
+  --bg:#ecf3f1;
+  --card:#ffffff;
+  --text:#121212;
+  --muted:#7e8b8c;
+  --radius:26px;
+  --shadow:0 22px 50px rgba(0,0,0,.10);
 }
 
+*{ box-sizing:border-box; margin:0; padding:0; font-family:"Montserrat",sans-serif; }
 body{
-  border: 2px solid red;
-  width: 100;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-.container{
-  border: 2px solid black;
-  width: 800px;
-  height: 500px;
-  display: flex;
-}
-.container-form{
-  border: 2px solid green;
-  width: 100%;
+  min-height:100vh; display:flex; align-items:center; justify-content:center;
+  background:var(--bg); color:var(--text);
 }
 
-.container_form form{
-  border: 2px solid red;
-  height: 100%;
-  display: flex;
-  flex-direction:column;
-  justify-content: center;
-  align-items: center;
+/* ===================== CONTENEDOR ===================== */
+.auth{
+  width:1120px; max-width:96vw; height:640px;
+  background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow);
+  position:relative; overflow:hidden;
+  display:grid; grid-template-columns:1fr 1fr;
 }
 
-.container-form h2{
-  font-size: 30px;
-  margin-bottom: 20px;
+/* ===================== FORMULARIOS ===================== */
+.panel-form{
+  display:flex; align-items:center; justify-content:center; padding:0 64px;
+  position:relative; z-index:30;
+  transition:opacity .35s ease, transform .35s ease;
+}
+.panel-login{ grid-column:1 / 2; }
+.panel-register{
+  grid-column:2 / 3;
+  opacity:0; pointer-events:none; transform:translateX(40px);
 }
 
-.social-networks{
-  
-  display: flex;
-  gap: 12px;
-  margin-bottom: 25px;
+form{ width:100%; max-width:440px; display:flex; flex-direction:column; gap:14px; }
+h1{ font-size:46px; line-height:1; font-weight:700; letter-spacing:.2px; }
+.hint{ color:var(--muted); margin-top:-6px; }
+
+.social-row{ display:flex; gap:14px; margin:14px 0 8px; }
+.social{
+  width:42px; height:42px; display:grid; place-items:center;
+  border:1px solid #d9dede; border-radius:10px; background:#fff; cursor:pointer;
+}
+
+.input{
+  width:100%; height:52px; background:#eeeeee; border-radius:14px;
+  display:flex; align-items:center; gap:10px; padding:0 16px;
+}
+.input input{ width:100%; background:transparent; border:none; outline:none; font-size:15px; }
+
+.link{ color:var(--brandDark); text-decoration:underline; font-size:14px; align-self:flex-start; }
+.btn{
+  height:48px; border:none; border-radius:999px; color:#fff; font-weight:700; cursor:pointer;
+  background:linear-gradient(135deg, var(--brand) 0%, var(--brandDark) 100%);
+}
+
+/* ===================== OVERLAY ===================== */
+.panel-overlay{
+  position:absolute; inset:0; z-index:10;
+  display:grid; grid-template-columns:1fr 1fr;
+  pointer-events:none;
+}
+.overlay-slot{ position:relative; overflow:hidden; }
+
+.overlay-content{
+  position:absolute; inset:0;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; color:#fff; gap:16px; padding:0 56px; z-index:7;
+  transition:opacity .3s ease;
+}
+.overlay-right{ opacity:1; }
+.overlay-left { opacity:0; }
+
+.overlay-content h2{ font-size:44px; font-weight:700; }
+.overlay-content p{ max-width:380px; line-height:1.45; opacity:.97; }
+.btn-outline{
+  height:48px; padding:0 28px; border-radius:999px; background:transparent;
+  border:2px solid #fff; color:#fff; font-weight:700; cursor:pointer;
+  pointer-events:auto;
+}
+
+/* ===================== SEMICÍRCULO PERFECTO ===================== */
+/* Con ellipse el borde verde cae justo en la mitad en ambos lados */
+.overlay-bg{
+  position:absolute; inset:0;
+  background:var(--brand);
+  clip-path:ellipse(53% 56% at 100% 50%);  /* cubre mitad derecha exacta */
+  transition:clip-path .7s cubic-bezier(.77,0,.175,1);
+  z-index:5;
+}
+.overlay-bg::after{
+  content:""; position:absolute; inset:0; z-index:6;
+  background:radial-gradient(circle at 65% 45%, rgba(255,255,255,.15), transparent 60%);
+  clip-path:inherit;
+}
+
+/* ===================== EFECTO DESLIZANTE ===================== */
+.auth.swap .panel-register{ opacity:1; pointer-events:auto; transform:none; }
+.auth.swap .panel-login{ opacity:0; pointer-events:none; transform:translateX(-40px); }
+
+.auth.swap .overlay-bg{
+  clip-path:ellipse(53% 56% at 0% 50%); /* se mueve al otro lado, simétrico */
+}
+.auth.swap .overlay-left{ opacity:1; transition-delay:.12s; }
+.auth.swap .overlay-right{ opacity:0; transition-delay:0s; }
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width:980px){
+  .auth{ grid-template-columns:1fr; height:auto; min-height:760px; }
+  .panel-form{ padding:26px; }
+  .panel-overlay{ position:relative; height:260px; grid-template-columns:1fr; }
+  .overlay-slot{ overflow:visible; }
+  .overlay-bg{ clip-path:ellipse(60% 60% at 50% 50%) !important; } /* centrado */
+  .overlay-bg::after{
+    background:radial-gradient(circle at 50% 40%, rgba(255,255,255,.12), transparent 60%);
   }
-
-.social-networks ion-icon{
-  border: 1px solid #c9cccb;
-  border-radius: 6px;
-  padding: 8px;
-  cursor: pointer;
-}
-.container-input{
-  border: 2px solid red;
-  width: 300px;
-  height: 40px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  padding: 0 15px;
-  background-color: #EEEEEE;
+  .overlay-content{ position:relative; opacity:1 !important; padding:0 26px; }
 }
